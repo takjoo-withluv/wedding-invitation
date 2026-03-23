@@ -47,25 +47,25 @@ export const Calendar = () => {
       {WEDDING_DATE.format(WEDDING_DATE_FORMAT)}
       <div className="calendar-wrapper">
         <div className="head holiday">
-          <span>Su</span>
+          <span>일</span>
         </div>
         <div className="head">
-          <span>Mo</span>
+          <span>월</span>
         </div>
         <div className="head">
-          <span>Tu</span>
+          <span>화</span>
         </div>
         <div className="head">
-          <span>We</span>
+          <span>수</span>
         </div>
         <div className="head">
-          <span>Th</span>
+          <span>목</span>
         </div>
         <div className="head">
-          <span>Fr</span>
+          <span>금</span>
         </div>
         <div className="head">
-          <span>Sa</span>
+          <span>토</span>
         </div>
         {Array.from({ length: firstDayOfWeek }).map((_, i) => (
           <div key={i} />
@@ -76,11 +76,11 @@ export const Calendar = () => {
           const classes = []
 
           const isSunday = (i + firstDayOfWeek) % 7 === 0
-
+/*
           if (isSunday || HOLIDAYS.includes(date)) {
             classes.push("holiday")
           }
-
+*/
           const isWeddingDate = date === WEDDING_DATE.date()
 
           if (isWeddingDate) {
