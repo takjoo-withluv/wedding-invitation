@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from "react"
 import HeartIcon from "../../icons/heart-icon.svg?react"
 import CalendarIcon from "../../icons/calendar-icon.svg?react"
 import MarkerIcon from "../../icons/marker-icon.svg?react"
-import { SERVER_URL } from "../../env"
+//import { SERVER_URL } from "../../env"
 import { saveAttendance } from "../../firebase" // 경로 확인
 
 const RULES = {
@@ -36,7 +36,7 @@ export const AttendanceInfo = () => {
     if (initialized.current) return
     initialized.current = true
 
-    if (!SERVER_URL || WEDDING_DATE.isBefore(now.current)) return
+    if (WEDDING_DATE.isBefore(now.current)) return
 
     openModal({
       className: "attendance-info-modal",
@@ -86,7 +86,7 @@ export const AttendanceInfo = () => {
     })
   }, [openModal, closeModal])
 
-  if (!SERVER_URL || WEDDING_DATE.isBefore(now.current)) return null
+  if (WEDDING_DATE.isBefore(now.current)) return null
 
   return (
     <div className="info-card">
