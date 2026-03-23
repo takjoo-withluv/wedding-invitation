@@ -52,7 +52,13 @@ export interface GuestBookData {
 }
 
 export const saveGuestBook = async (data: GuestBookData) => {
+  // 현재 있는 모든 방명록 가져오기
+  const snapshot = await getDocs(collection(db, "guestbook"));
+  const ids = snapshot.docs.map(doc => doc.data().id as number).filter(Boolean);
+  const nextId = ids.length ? Math.max(...ids) + 1 : 1;
+
   await addDoc(collection(db, "guestbook"), {
+    id: nextId,
     ...data,
     createdAt: new Date(),
   });
