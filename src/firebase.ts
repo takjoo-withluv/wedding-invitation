@@ -54,10 +54,9 @@ export interface GuestBookData {
 export const saveGuestBook = async (data: GuestBookData) => {
   const snapshot = await getDocs(collection(db, "guestbook"));
 
-  // 숫자가 아닌 id는 무시하고 숫자로 변환
   const ids = snapshot.docs
-  .map(doc => doc.data().id)
-  .filter(id => id !== undefined && id !== null); // 0도 포함
+    .map(doc => Number(doc.data().id)) // 숫자로 변환
+    .filter(id => !isNaN(id));         // NaN 제거
 
   const nextId = ids.length ? Math.max(...ids) + 1 : 1;
 
