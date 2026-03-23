@@ -30,6 +30,7 @@ export const Cover = () => {
       </div>
       <div className="wedding-day-of-week">
         {DAY_OF_WEEK[WEDDING_DATE.day()]}
+        일요일
       </div>
       <div className="image-wrapper">
         <img src={COVER_IMAGE} alt="sample" />
