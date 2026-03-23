@@ -13,6 +13,7 @@ import HeartIcon from "../../icons/heart-icon.svg?react"
 import CalendarIcon from "../../icons/calendar-icon.svg?react"
 import MarkerIcon from "../../icons/marker-icon.svg?react"
 import { SERVER_URL } from "../../env"
+import { saveAttendance } from "../../firebase" // 경로 확인
 
 const RULES = {
   name: {
@@ -178,6 +179,7 @@ const AttendanceModalContent = () => {
             return
           }
 
+          /*
           const res = await fetch(`${SERVER_URL}/attendance`, {
             method: "POST",
             headers: {
@@ -188,7 +190,9 @@ const AttendanceModalContent = () => {
           if (!res.ok) {
             throw new Error(res.statusText)
           }
+            */
 
+          await saveAttendance({ side, name, meal, count }) // 🔹 이걸 사용
           alert("참석 의사가 성공적으로 전달되었습니다.")
           closeModal()
         } catch {
