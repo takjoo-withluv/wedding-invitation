@@ -76,11 +76,11 @@ export const Calendar = () => {
           const classes = []
 
           const isSunday = (i + firstDayOfWeek) % 7 === 0
-/*
+
           if (isSunday || HOLIDAYS.includes(date)) {
             classes.push("holiday")
           }
-*/
+
           const isWeddingDate = date === WEDDING_DATE.date()
 
           if (isWeddingDate) {
