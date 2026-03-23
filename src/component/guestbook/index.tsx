@@ -1,4 +1,3 @@
-import { saveAttendance } from "../../firebase"
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Button } from "../button"
 import { dayjs } from "../../const"
@@ -120,7 +119,7 @@ export const GuestBook = () => {
 
       <div className="break" />
 
-      {true && (
+      {SERVER_URL && (
         <>
           <Button
             onClick={() =>
@@ -237,7 +236,6 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
             )
             return
           }
-          /*
 
           const res = await fetch(`${SERVER_URL}/guestbook`, {
             method: "POST",
@@ -249,13 +247,6 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
           if (!res.ok) {
             throw new Error(res.statusText)
           }
-          */
-
-          await saveAttendance({
-            name,
-            content,
-            password,
-          })
 
           alert("방명록 작성이 완료되었습니다.")
           closeModal()
