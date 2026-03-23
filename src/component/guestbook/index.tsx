@@ -4,7 +4,8 @@ import { dayjs } from "../../const"
 import { LazyDiv } from "../lazyDiv"
 import { useModal } from "../modal"
 import offlineGuestBook from "./offlineGuestBook.json"
-import { SERVER_URL } from "../../env"
+//import { SERVER_URL } from "../../env"
+import { saveAttendance } from "../../firebase" // 경로 확인
 
 const RULES = {
   name: {
@@ -236,7 +237,7 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
             )
             return
           }
-
+          /*
           const res = await fetch(`${SERVER_URL}/guestbook`, {
             method: "POST",
             headers: {
@@ -247,6 +248,8 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
           if (!res.ok) {
             throw new Error(res.statusText)
           }
+            */
+           
 
           alert("방명록 작성이 완료되었습니다.")
           closeModal()

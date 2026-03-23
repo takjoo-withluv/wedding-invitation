@@ -190,9 +190,10 @@ const AttendanceModalContent = () => {
           if (!res.ok) {
             throw new Error(res.statusText)
           }
-            */
-
+          */
+         
           await saveAttendance({ side, name, meal, count }) // 🔹 이걸 사용
+
           alert("참석 의사가 성공적으로 전달되었습니다.")
           closeModal()
         } catch {
