@@ -1,6 +1,15 @@
 // firebase.ts
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  getDocs,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 
 // 🔹 Firebase 설정
 const firebaseConfig = {
@@ -48,3 +57,6 @@ export const saveGuestBook = async (data: GuestBookData) => {
     createdAt: new Date(),
   });
 };
+
+// 🔹 export 추가
+export { db, collection, query, orderBy, getDocs, doc, deleteDoc };

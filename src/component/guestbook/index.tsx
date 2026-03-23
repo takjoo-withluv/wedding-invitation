@@ -5,7 +5,8 @@ import { LazyDiv } from "../lazyDiv"
 import { useModal } from "../modal"
 import offlineGuestBook from "./offlineGuestBook.json"
 //import { SERVER_URL } from "../../env"
-import { saveAttendance } from "../../firebase" // 경로 확인
+import { collection, query, orderBy, getDocs, doc, deleteDoc } from "firebase/firestore"
+import { db } from "../../firebase"
 
 const RULES = {
   name: {
@@ -35,6 +36,7 @@ export const GuestBook = () => {
 
   const [posts, setPosts] = useState<Post[]>([])
 
+  /*
   const loadPosts = async () => {
     if (SERVER_URL) {
       try {
@@ -53,6 +55,30 @@ export const GuestBook = () => {
       setPosts(offlineGuestBook.slice(0, 3))
     }
   }
+    */
+
+  const loadPosts = async () => {
+    try {
+      const q = query(collection(db, "guestbook"), orderBy("createdAt", "desc"))
+      const snapshot = await getDocs(q)
+
+      const allPosts: Post[] = snapshot.docs.map(docSnap => {
+        const data = docSnap.data()
+        return {
+          id: parseInt(docSnap.id),   // string → number
+          name: data.name,
+          content: data.content,
+          timestamp: data.createdAt.toMillis() / 1000,
+        }
+      })
+
+      setPosts(allPosts.slice(0, 3))
+    } catch (error) {
+      console.error("Error loading posts:", error)
+      setPosts([])
+    }
+  }
+
 
   useEffect(() => {
     loadPosts()
@@ -237,6 +263,7 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
             )
             return
           }
+
           /*
           const res = await fetch(`${SERVER_URL}/guestbook`, {
             method: "POST",
@@ -249,7 +276,8 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
             throw new Error(res.statusText)
           }
             */
-           
+
+          await saveGuestBook({ name, content, password })
 
           alert("방명록 작성이 완료되었습니다.")
           closeModal()
@@ -479,7 +507,7 @@ const DeleteGuestBookModal = ({
             )
             return
           }
-
+          /*
           const result = await fetch(`${SERVER_URL}/guestbook`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -498,6 +526,27 @@ const DeleteGuestBookModal = ({
           alert("삭제되었습니다.")
           closeModal()
           onSuccess()
+          */
+
+          const postRef = doc(db, "guestbook", postId)
+          const postSnap = await getDoc(postRef)
+
+          if (!postSnap.exists()) {
+            alert("삭제할 방명록이 없습니다.")
+            return
+          }
+
+          if (postSnap.data().password !== password) {
+            alert("비밀번호가 일치하지 않습니다.")
+            return
+          }
+
+          await deleteDoc(postRef)
+          alert("삭제되었습니다.")
+          closeModal()
+          onSuccess()
+
+
         } catch {
           alert("방명록 삭제에 실패했습니다.")
         } finally {
