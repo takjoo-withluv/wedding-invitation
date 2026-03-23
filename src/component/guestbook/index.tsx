@@ -199,7 +199,12 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
 
   const getNextId = async () => {
     const snapshot = await getDocs(collection(db, "guestbook"))
-    const ids = snapshot.docs.map(docSnap => (docSnap.data() as any).id)
+    
+    // id가 숫자가 아닌 경우 걸러내고 0도 포함
+    const ids = snapshot.docs
+      .map(docSnap => Number((docSnap.data() as any).id))
+      .filter(id => !isNaN(id))
+
     return ids.length ? Math.max(...ids) + 1 : 1
   }
 
