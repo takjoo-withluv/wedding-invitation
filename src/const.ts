@@ -14,7 +14,7 @@ export const WEDDING_DATE_FORMAT = `YYYY년 MMMM D일 dddd A h시${WEDDING_DATE.
 
 // 예식 당월 휴무일. 켈린더에 표시하기 위함.
 // 예: 예식일 8월 -> 8월 15일 광복절
-export const HOLIDAYS = [7]
+export const HOLIDAYS = [17]
 
 export const LOCATION = "부산광역시 범일동 디엘웨딩홀"
 export const LOCATION_ADDRESS = "부산 동구 조방로 14, 디엘웨딩홀 3층"
