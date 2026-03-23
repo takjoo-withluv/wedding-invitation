@@ -52,9 +52,13 @@ export interface GuestBookData {
 }
 
 export const saveGuestBook = async (data: GuestBookData) => {
-  // 현재 있는 모든 방명록 가져오기
   const snapshot = await getDocs(collection(db, "guestbook"));
-  const ids = snapshot.docs.map(doc => doc.data().id as number).filter(Boolean);
+
+  // 숫자가 아닌 id는 무시하고 숫자로 변환
+  const ids = snapshot.docs
+  .map(doc => doc.data().id)
+  .filter(id => id !== undefined && id !== null); // 0도 포함
+
   const nextId = ids.length ? Math.max(...ids) + 1 : 1;
 
   await addDoc(collection(db, "guestbook"), {
