@@ -102,25 +102,7 @@ const NaverMap = () => {
         <div className="map-inner" ref={ref}></div>
       </div>
       <div className="navigation">
-        <button
-          onClick={() => {
-            switch (checkDevice()) {
-              case "ios":
-              case "android":
-                window.open(`nmap://place?id=${NMAP_PLACE_ID}`, "_self")
-                break
-              default:
-                window.open(
-                  `https://map.naver.com/p/entry/place/${NMAP_PLACE_ID}`,
-                  "_blank",
-                )
-                break
-            }
-          }}
-        >
-          <img src={nmapIcon} alt="naver-map-icon" />
-          네이버 지도
-        </button>
+        
         <button
           onClick={() => {
             switch (checkDevice()) {
