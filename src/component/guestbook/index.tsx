@@ -4,7 +4,7 @@ import { dayjs } from "../../const"
 import { LazyDiv } from "../lazyDiv"
 import { useModal } from "../modal"
 import offlineGuestBook from "./offlineGuestBook.json"
-import { collection, query, orderBy, getDocs, doc, deleteDoc, getDoc, addDoc, Timestamp } from "firebase/firestore"
+import { collection, query, orderBy, getDocs, doc, deleteDoc, getDoc, addDoc, Timestamp, } from "firebase/firestore"
 import { db } from "../../firebase"
 
 const RULES = {
@@ -474,33 +474,34 @@ const DeleteGuestBookModal = ({
             alert(`비밀번호를 ${RULES.password.minLength}자 이상 입력해주세요.`)
             return
           }
-
           if (password.length > RULES.password.maxLength) {
-            alert(
-              `비밀번호를 ${RULES.password.maxLength}자 이하로 입력해주세요.`,
-            )
+            alert(`비밀번호를 ${RULES.password.maxLength}자 이하로 입력해주세요.`)
             return
           }
 
-          const q = doc(db, "guestbook", postId.toString())
-          const postSnap = await getDoc(q)
+          // 🔹 id 필드 기준으로 문서 찾기
+          const q = query(collection(db, "guestbook"), where("id", "==", postId))
+          const snapshot = await getDocs(q)
 
-          if (!postSnap.exists()) {
+          if (snapshot.empty) {
             alert("삭제할 방명록이 없습니다.")
             return
           }
 
-          const data = postSnap.data() as any
+          const docRef = snapshot.docs[0].ref
+          const data = snapshot.docs[0].data() as any
+
           if (data.password !== password) {
             alert("비밀번호가 일치하지 않습니다.")
             return
           }
 
-          await deleteDoc(q)
+          await deleteDoc(docRef)
           alert("삭제되었습니다.")
           closeModal()
           onSuccess()
-        } catch {
+        } catch (err) {
+          console.error(err)
           alert("방명록 삭제에 실패했습니다.")
         } finally {
           setLoading(false)
