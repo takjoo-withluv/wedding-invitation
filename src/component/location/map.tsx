@@ -136,7 +136,7 @@ const NaverMap = () => {
                 break
               default:
                 window.open(
-                  `https://map.kakao.com/link/map/${KMAP_PLACE_ID}`,
+                  `https://map.kakao.com/link/map/${LOCATION},${WEDDING_HALL_POSITION[1]},${WEDDING_HALL_POSITION[0]}`,
                   "_blank",
                 )
                 break
