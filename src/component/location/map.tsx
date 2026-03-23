@@ -119,7 +119,7 @@ const NaverMap = () => {
           }}
         >
           <img src={nmapIcon} alt="naver-map-icon" />
-          네이버지도
+          네이버 지도
         </button>
         <button
           onClick={() => {
@@ -135,13 +135,16 @@ const NaverMap = () => {
                   })
                 break
               default:
-                window.location.href = `kakaomap://look?p=${WEDDING_HALL_POSITION[1]},${WEDDING_HALL_POSITION[0]}`
+                window.open(
+                  `https://map.kakao.com/link/map/${KMAP_PLACE_ID}`,
+                  "_blank",
+                )
                 break
             }
           }}
         >
           <img src={knaviIcon} alt="kakao-navi-icon" />
-          카카오맵
+          카카오 내비
         </button>
         <button
           onClick={() => {
