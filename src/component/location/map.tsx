@@ -11,10 +11,10 @@ import {
   NMAP_PLACE_ID,
   WEDDING_HALL_POSITION,
 } from "../../const"
-import { NAVER_MAP_CLIENT_ID } from "../../env"
+import { KAKAO_SDK_JS_KEY } from "../../env"
 
 export const Map = () => {
-  return NAVER_MAP_CLIENT_ID ? <NaverMap /> : <div>Map is not available</div>
+  return KAKAO_SDK_JS_KEY ? <NaverMap /> : <div>Map is not available</div>
 }
 
 const NaverMap = () => {
