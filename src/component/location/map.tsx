@@ -119,7 +119,7 @@ const NaverMap = () => {
           }}
         >
           <img src={nmapIcon} alt="naver-map-icon" />
-          네이버 지도
+          네이버지도
         </button>
         <button
           onClick={() => {
@@ -144,7 +144,7 @@ const NaverMap = () => {
           }}
         >
           <img src={knaviIcon} alt="kakao-navi-icon" />
-          카카오 내비
+          카카오맵
         </button>
         <button
           onClick={() => {
