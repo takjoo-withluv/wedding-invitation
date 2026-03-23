@@ -4,7 +4,7 @@ import { dayjs } from "../../const"
 import { LazyDiv } from "../lazyDiv"
 import { useModal } from "../modal"
 import offlineGuestBook from "./offlineGuestBook.json"
-import { collection, query, orderBy, getDocs, doc, deleteDoc, getDoc, addDoc, Timestamp, } from "firebase/firestore"
+import { collection, query, orderBy, getDocs, doc, deleteDoc, getDoc, addDoc, Timestamp, where } from "firebase/firestore"
 import { db } from "../../firebase"
 
 const RULES = {
