@@ -198,15 +198,18 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
   const [loading, setLoading] = useState(false)
 
   const getNextId = async () => {
-    const snapshot = await getDocs(collection(db, "guestbook"))
-    
-    // id가 숫자가 아닌 경우 걸러내고 0도 포함
-    const ids = snapshot.docs
-      .map(docSnap => Number((docSnap.data() as any).id))
-      .filter(id => !isNaN(id))
+    const snapshot = await getDocs(collection(db, "guestbook"));
 
-    return ids.length ? Math.max(...ids) + 1 : 1
-  }
+    // id가 숫자인 경우만 사용
+    const ids = snapshot.docs
+      .map(docSnap => {
+        const id = (docSnap.data() as any).id;
+        return typeof id === "number" ? id : null;
+      })
+      .filter(id => id !== null);
+
+    return ids.length ? Math.max(...ids) + 1 : 1;
+  };
 
   return (
     <form
