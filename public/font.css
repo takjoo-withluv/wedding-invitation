@@ -12,15 +12,17 @@
   font-style: normal;
 }
 
-/* 🔥 여기부터 추가 */
+/* 전체 감성 */
 body {
-  font-family: 'MapoGoldenPier', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'MapoGoldenPier', sans-serif;
 }
 
+/* 영어 */
 .english {
   font-family: 'Allura', cursive;
 }
 
+/* 🔥 유저 입력 (중요) */
 input, textarea, .content {
-  font-family: 'MapoGoldenPier', 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
 }
