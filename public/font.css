@@ -12,6 +12,6 @@
   font-style: normal;
 }
 
-* {
-  font-family: 'Noto Sans KR', sans-serif !important;
+body {
+  font-family: 'YourFont', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
 }
