@@ -12,19 +12,29 @@
   font-style: normal;
 }
 
-/* 🔥 전체 기본 (감성 유지) */
+/* 🔥 전체 감성 폰트 유지 */
 body {
   font-family: 'MapoGoldenPier', sans-serif;
 }
 
-/* 🔥 영어 (필기체 유지) */
+/* 🔥 영어 필기체 */
 .english {
   font-family: 'Allura', cursive;
 }
 
-/* 🔥 방명록 + 입력창 (핵심 - 절대 안 깨짐) */
+/* 🔥 입력창 (강제 Noto 적용) */
 input,
-textarea,
-.content {
-  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+textarea {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif !important;
+}
+
+/* 🔥 방명록 출력 내용 (강제 Noto 적용) */
+.post .content {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif !important;
+}
+
+/* 🔥 혹시 상위에서 덮는 경우 대비 (안전망) */
+.guestbook .content,
+.card.guestbook .content {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif !important;
 }
