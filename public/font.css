@@ -12,3 +12,10 @@
   font-style: normal;
 }
 
+body {
+  font-family: 'MapoGoldenPier', sans-serif;
+}
+
+input, textarea, .content {
+  font-family: 'Noto Sans KR', sans-serif;
+}
