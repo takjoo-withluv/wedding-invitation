@@ -2,10 +2,10 @@
   "name": "wedding-invitation",
   "version": "0.1.0",
   "description": "A wedding invitation web page template",
-  "author": "tak hyun kim <takjoolove25@gmail.com> (https://takjoolove25.github.io/)",
+  "author": "tak hyun kim <takjoolove0705@gmail.com> (https://takjoo-withluv.github.io/)",
   "license": "MIT",
   "private": true,
-  "homepage": "https://takjoolove25.github.io/wedding-invitation",
+  "homepage": "https://takjoo-withluv.github.io/wedding-invitation",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
