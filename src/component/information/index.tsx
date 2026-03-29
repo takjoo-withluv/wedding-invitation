@@ -8,11 +8,12 @@ import { AttendanceInfo } from "./attendance"
 export const Information1 = () => {
   return (
     <>
-      <h2 className="english">Information</h2>
+      /*<h2 className="english">Information</h2>*/
+      <h2 className="english">안내</h2>
       <div className="info-card">
         <div className="label">식사 안내</div>
         <div className="content">
-          식사시간: 13시 00분 ~ 15시 00분
+          식사시간: 13시 30분 ~ 15시 30분
           <br />
           장소: 3층 연회장
         </div>
