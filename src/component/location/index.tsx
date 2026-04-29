@@ -11,7 +11,7 @@ export const Location = () => {
         <h2 className="english">Location</h2>        
         <div className="addr">
           {LOCATION}
-          <div className="detail">{LOCATION_ADDRESS}</div>
+          {/*<div className="detail">{LOCATION_ADDRESS}</div>*/}
         </div>
         <Map />
       </LazyDiv>
@@ -32,8 +32,6 @@ export const Location = () => {
           </div>
         </div>
 
-
-
         {/* 버스 섹션 */}
         <div className="location-info">
           <div className="transportation-icon-wrapper">
@@ -47,27 +45,27 @@ export const Location = () => {
             26, 41 (부산진성공원)
             <br />
             22, 27, 40, 101[영도발], 134(시민회관)
-            <br /><br />
+            <br />
             <b>해운대·센텀·수영 방면</b>
             <br />
             40, 42 (부산진성공원)
-            <br /><br />
+            <br />
             <b>민락·광안·대연동 / 용호동 방면</b>
             <br />
             40, 41, 42, 83, 108, 22, 27 (부산진성공원) / 83-1(시민회관)
-            <br /><br />
+            <br />
             <b>사상·엄궁·주례·개금·서면 방면</b>
             <br />
             108, 138 (범일동 국민은행) / 68, 168 (시민회관)
-            <br /><br />
+            <br />
             <b>당감동 방면</b>
             <br />
             23 (범일동 국민은행)
-            <br /><br />
+            <br />
             <b>노포·금정·부산대 방면</b>
             <br />
             80 (시민회관)
-            <br /><br />
+            <br />
             <b>사직·동래·연산·양정 방면</b>
             <br />
             10 (범일동 국민은행) / 57, 80, 99 (시민회관)
