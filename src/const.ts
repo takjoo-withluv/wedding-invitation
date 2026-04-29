@@ -16,7 +16,7 @@ export const WEDDING_DATE_FORMAT = `YYYY년 MMMM D일 dddd A h시${WEDDING_DATE.
 // 예: 예식일 8월 -> 8월 15일 광복절
 export const HOLIDAYS = [17]
 
-export const LOCATION = "부산시 범일동 디엘웨딩홀"
+export const LOCATION = "부산시 동구 범일동 830-140 디엘웨딩홀"
 export const LOCATION_ADDRESS = "부산시 동구 조방로 14, 디엘웨딩홀 3층"
 
 // 카카오톡 공유 시 위치 정보로 사용할 주소.
