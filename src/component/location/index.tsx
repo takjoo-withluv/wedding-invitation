@@ -8,6 +8,7 @@ export const Location = () => {
   return (
     <>
       <LazyDiv className="card location">
+        {/*<h2 className="english">안내</h2>*/}
         <h2 className="english">Location</h2>        
         <div className="addr">
           {LOCATION}
@@ -15,9 +16,7 @@ export const Location = () => {
         </div>
         <Map />
       </LazyDiv>
-
       <LazyDiv className="card location">
-        {/* 대중교통 섹션 */}
         <div className="location-info">
           <div className="transportation-icon-wrapper">
             <BusIcon className="transportation-icon" />
@@ -25,25 +24,38 @@ export const Location = () => {
           <div className="heading">대중교통</div>
           <div />
           <div className="content">
-            <b>[지하철 이용 시]</b>
+            * 지하철 이용시
             <br />
-            1호선 <b>범일역 2번, 8번 출구</b> (도보 7분)
+            지하철 1호선 <b>범일역 2번, 8번 출구 (도보7분)</b>
             <br />
-            2호선 <b>범일역 3번 출구</b> (시민회관 방면)
+            지하철 2호선 <b>범일역 3번출구 (시민회관 방면 도보5분)</b>
           </div>
           <div />
           <div className="content">
-            <b>[버스 이용 시]</b>
+            * 버스 이용 시
             <br />
-            하차 정류장: <b>시민회관, 자성대, 범일동 국민은행</b>
+            대신·남포·부산역·중앙동 방면 <br />
+             - 26, 41(자성대) / 22, 27, 40, 101[영도발], 134(시민회관)
             <br />
-            <small style={{ fontSize: '0.85em', color: '#888' }}>
-              22, 23, 26, 27, 40, 41, 42, 57, 68, 80, 83, 83-1, 99, 101, 108, 134, 138, 168
-            </small>
+            해운대·센텀·수영 방면 <br />
+             - 40, 42
+            <br />
+            민락·광안·대연동/용호동 방면 <br /> 
+             - 40, 41, 42, 83, 108, 22, 27(자성대) / 83-1(시민회관)
+            <br />
+            사상·엄궁·주례·개금·서면 방면 <br />
+             - 108, 138(범일동 국민은행) / 68, 168(시민회관)
+            <br />
+            당감동 방면 <br />
+             - 23(범일동 국민은행)
+            <br />
+            노포·금정·부산대 방면 <br />
+             - 80(시민회관)
+            <br />
+            동래, 사직, 양정 방면 <br />
+             - 10(범일동 국민은행) / 57, 80, 99(시민회관)
           </div>
         </div>
-
-        {/* 자가용 섹션 */}
         <div className="location-info">
           <div className="transportation-icon-wrapper">
             <CarIcon className="transportation-icon" />
@@ -51,27 +63,19 @@ export const Location = () => {
           <div className="heading">자가용</div>
           <div />
           <div className="content">
-            <b>'디엘웨딩홀'</b> 검색
+            네이버 지도, 카카오 네비, 티맵 등 이용
             <br />
-            주차장 이용 시 웨딩홀과 바로 연결됩니다.
+            <b>디엘웨딩홀</b> 검색
             <br />
-            <span style={{ color: '#d9534f' }}><b>주차 요금은 무료입니다.</b></span>
+            - 주차 요금은 무료입니다.
+            <br />
+            (주차장 이용 시 웨딩홀과 바로 연결)
           </div>
           <div />
           <div className="content">
-            <div style={{ 
-              marginTop: '10px', 
-              padding: '10px', 
-              backgroundColor: '#f8f8f8', 
-              borderRadius: '5px',
-              fontSize: '0.9em' 
-            }}>
-              <b>※ 유의사항</b>
-              <br />
-              범일역 인근은 교통이 혼잡할 수 있으니 
-              <br />
-              가급적 대중교통 이용을 권장드립니다.
-            </div>
+            <b>
+              ※ 유의사항
+            </b>
           </div>
         </div>
       </LazyDiv>
