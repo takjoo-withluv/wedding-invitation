@@ -61,7 +61,7 @@ export const Location = () => {
           </div>
           <div />
           <div className="content">
-            <b style={{ color: '#888' }}>※ 유의사항</b>
+            <b>※ 유의사항</b>
             <br />
             주말에는 예식홀 주변이 혼잡할 수 있으니 
             <br />
