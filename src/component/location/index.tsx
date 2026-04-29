@@ -32,20 +32,7 @@ export const Location = () => {
           </div>
         </div>
 
-        <div className="location-info">
-          <div className="transportation-icon-wrapper">
-            <CarIcon className="transportation-icon" />
-          </div>
-          <div className="heading">주차</div>
-          <div />
-          <div className="content">
-            동일타워 내 지하주차장 이용 가능
-            <br />
-            (예식 하객 기준 2시간 무료주차 제공)
-            <br />
-            ※ 주차장이 혼잡할 수 있으니 대중교통 이용을 권장합니다.
-          </div>
-        </div>
+
 
         {/* 버스 섹션 */}
         <div className="location-info">
@@ -84,6 +71,21 @@ export const Location = () => {
             <b>사직·동래·연산·양정 방면</b>
             <br />
             10 (범일동 국민은행) / 57, 80, 99 (시민회관)
+          </div>
+        </div>
+
+        <div className="location-info">
+          <div className="transportation-icon-wrapper">
+            <CarIcon className="transportation-icon" />
+          </div>
+          <div className="heading">주차</div>
+          <div />
+          <div className="content">
+          동일타워 내 지하주차장 이용 가능
+          <br />
+          (예식 하객 기준 2시간 무료주차 제공)
+          <br />
+          ※ 주차장이 혼잡할 수 있으니 대중교통 이용을 권장합니다.
           </div>
         </div>
       </LazyDiv>
