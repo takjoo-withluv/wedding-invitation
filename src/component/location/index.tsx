@@ -63,7 +63,7 @@ export const Location = () => {
             <CarIcon className="transportation-icon" />
           </div>
           <div className="heading">주차 안내</div>
-          <div />
+          <div /> 
           <div className="content">
             동일타워 내 지하주차장 이용 가능
             <br />
