@@ -1,6 +1,8 @@
 import {
   BRIDE_FULLNAME,
+  BRIDE_FIRSTNAME,
   GROOM_FULLNAME,
+  GROOM_FIRSTNAME,
   LOCATION,
   WEDDING_DATE,
   WEDDING_DATE_FORMAT,
@@ -37,9 +39,9 @@ export const Cover = () => {
       <div className="subtitle">Save the date for the wedding of</div>
       {/*<div className="subtitle">소중한 날, 초대합니다</div>*/}
       <div className="names">
-        {GROOM_FULLNAME}
+        {GROOM_FIRSTNAME}
         <div className="divider" />
-        {BRIDE_FULLNAME}
+        {BRIDE_FIRSTNAME}
       </div>
       <div className="info">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>
       <div className="info">{LOCATION}</div>
