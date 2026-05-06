@@ -43,14 +43,14 @@ export const Invitation = () => {
         <span className="relation">
           의 <span className="relation-name">{GROOM_TITLE}</span>
         </span>{" "}
-        {GROOM_FULLNAME}
+        {/*{GROOM_FULLNAME}*/}탁현
       </div>
       <div className="name">
         {BRIDE_FATHER} · {BRIDE_MOTHER}
         <span className="relation">
           의 <span className="relation-name">{BRIDE_TITLE}</span>
         </span>{" "}
-        {BRIDE_FULLNAME}
+        {/*{BRIDE_FULLNAME}*/}은주
       </div>
 
       <div className="break" />
