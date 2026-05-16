@@ -8,6 +8,8 @@ import { createHtmlPlugin } from "vite-plugin-html"
 import {
   GROOM_FULLNAME,
   BRIDE_FULLNAME,
+  GROOM_FIRSTNAME,
+  BRIDE_FIRSTNAME,
   WEDDING_DATE,
   LOCATION,
   WEDDING_DATE_FORMAT,
