@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",         // 👈 "es5"에서 "esnext" (또는 "es2020")로 변경
     "lib": [
       "dom",
       "dom.iterable",
@@ -14,7 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler", // 👈 "node"에서 "bundler"로 변경
+    "allowImportingTsExtensions": true, // 👈 bundler 사용 시 추가 권장
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
