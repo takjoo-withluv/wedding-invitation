@@ -4,6 +4,7 @@ import {
   GROOM_FULLNAME,
   GROOM_FIRSTNAME,
   LOCATION,
+  LOCATION_HALL,
   WEDDING_DATE,
   WEDDING_DATE_FORMAT,
 } from "../../const"
@@ -45,6 +46,7 @@ export const Cover = () => {
       </div>
       {/*<div className="content">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>*/}
       <div className="content">{LOCATION}</div>
+      <div className="content">{LOCATION_HALL}</div>
     </LazyDiv>
   )
 }
