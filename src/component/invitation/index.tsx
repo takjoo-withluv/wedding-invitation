@@ -25,9 +25,6 @@ export const Invitation = () => {
 
       <div className="break" />
 
-      <div className="content">사랑은 마주 보는 것이 아니라</div>
-      <div className="content">같은 방향을 바라보는 일이라고 했습니다.</div>
-      <div className="break" />
       <div className="content">여덟 번의 여름을 함께 지나며</div>
       <div className="content">저희는 서로의 웃음이 되고, 쉼이 되고</div>
       <div className="content">하루의 안부가 되었습니다.</div>
@@ -38,7 +35,6 @@ export const Invitation = () => {
       <div className="break" />
       <div className="content">저희 두 사람의 새로운 시작에</div>
       <div className="content">따뜻한 마음으로 함께해 주세요.</div>
-
       <div className="break" />
 
       <div className="name">
