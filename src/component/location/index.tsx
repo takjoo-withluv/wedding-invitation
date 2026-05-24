@@ -1,6 +1,7 @@
 import { Map } from "./map"
 import CarIcon from "../../icons/car-icon.svg?react"
 import BusIcon from "../../icons/bus-icon.svg?react"
+import { STATIC_ONLY } from "../../env"
 import { LazyDiv } from "../lazyDiv"
 import { LOCATION, LOCATION_ADDRESS, LOCATION_HALL } from "../../const"
 
@@ -8,7 +9,7 @@ export const Location = () => {
   return (
     <>
       <LazyDiv className="card location">
-        <h2 className="english">Location</h2>
+        <h2 className="english">Location  {String(STATIC_ONLY)}</h2>
         {/*<h2 className="">오시는길</h2>*/}
         <div className="addr">{LOCATION_HALL}</div>
         <div className="addr">{LOCATION}</div>        
