@@ -150,6 +150,17 @@ export const Information2 = () => {
 }
 
 export const Information = () => {
+  return (
+      <>
+        <LazyDiv className="card information">
+          <Information1 />
+        </LazyDiv>
+        <LazyDiv className="card information">
+          <Information2 />
+        </LazyDiv>
+      </>
+    )
+  /*
   if (STATIC_ONLY) {
     return (
       <>
@@ -162,7 +173,7 @@ export const Information = () => {
       </>
     )
   }
-/*
+
   return (
     <LazyDiv className="card information">
       <Information1 />
