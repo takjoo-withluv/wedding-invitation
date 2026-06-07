@@ -77,8 +77,7 @@ export const GROOM_INFO = [
     name: GROOM_FULLNAME,
     phone: "010-3109-3234",
     account: "국민은행 960102-01-376589",
-  },
-  /*
+  },  
   {
     relation: "신랑 아버지",
     name: GROOM_FATHER,
@@ -90,6 +89,5 @@ export const GROOM_INFO = [
     name: GROOM_MOTHER,
     phone: "010-2529-6754",
     account: "부산은행 273-12-010972-6",
-  },
-  */
+  },  
 ]
